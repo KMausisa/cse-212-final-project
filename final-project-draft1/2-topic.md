@@ -30,4 +30,4 @@ To better understand, here is a simple illustration:
 Since the head will have two pointers, the prev will point to *null*. Both the head and tail will point to null.
 
 ## Inserting into a Linked List
-Inserting a new node into a linked list involves moving the pointers 
+There are three ways to insert a new node into a linked list: Inserting a new head, inserting a new tail, and inserting in between the head and the tail (or at the middle).
