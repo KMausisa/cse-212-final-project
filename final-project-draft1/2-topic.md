@@ -82,3 +82,21 @@ new_node.next = current.next    # Step 3
 current.next.prev = new_node    # Step 4
 current.next = new_node         # Step 5
 ```
+
+## Removing from a Linked List
+Removing the head or tail from a linked list is similar to inserting in moving the pointers yet it involves setting the current node to **None**.
+
+### Removing the Head
+1. Set the "prev" of the second Node to None.
+2. Set the head to be the following node.
+
+### Removing the Tail
+1. Set the "next" of the second to last node to None.
+2. Set the tail to be the second to last node.
+
+### Removing in the Middle
+Simply put, removing a node somewhere in the middle of the linked linst involves the rewiring of pointers from the previous node (current.prev) and the following node (current.next) of the node that will be removed. Here are the steps:
+
+1. Set the prev of the node after current to the node before current.
+2. Set the next of the node before current to the node after current.
+
