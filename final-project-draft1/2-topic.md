@@ -100,3 +100,24 @@ Simply put, removing a node somewhere in the middle of the linked linst involves
 1. Set the prev of the node after current to the node before current.
 2. Set the next of the node before current to the node after current.
 
+## Evaluating Performance
+In terms of Big O, a linked list's performance is more efficient in comparison to a dynamic array. 
+
+### Inserts
+Inserting a new node to the front of a linked list will not require a shift of data. With the concept of pointers, the performance of this operation is concluded as O(1). Meanwhile, inserting data in the front of a dynamic array will require a shift of data to the left; therefore, having a performance of O(n).
+
+Inserting a new node at the end will produce a performance of O(1) for both linked list and dynamic array. 
+
+Inserting a new node in the middle will require a search for the node that we will be inserting after. Because of this search, the performance is evaluated as O(n). Similarly, inserting in the middle of a dynamic array will have the same performance. 
+
+### Removes
+Removing a node in the front (or the head) will only require to change the value that the pointers point to. The performance of doing so will be O(1). On the other hand, a dynamic array needs to shift items in the list when there is an item other than the last one being removed. Therefore, the performance is O(n).
+
+Removing a data point in the middle of both linked list and dynamic array will result in the same performance in O(n).
+
+Lastly, removing the last item in both lists result in efficient performance in O(1).
+
+With this information, we can conclude that linked lists have efficient performance when inserting at either the beginning and the end.
+
+
+
