@@ -119,5 +119,74 @@ Lastly, removing the last item in both lists result in efficient performance in 
 
 With this information, we can conclude that linked lists have efficient performance when inserting at either the beginning and the end.
 
+## Example
+Here is implementation of a linked list that inserts a new node at the beginning of the linked list. In addition, it will also implement removing the head from the list. If you need to refresh on the operations, please look at the section above.
+
+```python
+class LinkedList:
+
+    class Node:
+        """
+        The Node is a class caontained in another class. Also called an inner class. This will be used to instantiate the nodes that will be contained in the linked list.
+        """
+        def __init__(self, data):
+            self.data = data
+            self.next = None
+            self.prev = None
+    
+    def __init__(self):
+        self.head = None
+        self.tail = None 
+
+    def insert_head(self, value):
+        """
+        Insert a new node at the front of the linked list.
+        """
+        # Create the new node
+        new_node = LinkedList.Node(value)
+
+        # If the list is empty, set both the head and tail to equal the new node
+        if self.head is None:
+            self.head = new_node
+            self.tail = new_node
+
+        # Else, replace the current head with the new node
+        else:
+            self.head.prev = new_node
+            new_node.next = self.head
+            self.head = new_node
+
+    def remove_head(self):
+        """
+        Remove the current head of the linked list.
+        """
+        self.head.next.prev = None
+        self.head = self.head.next
+```
+
+## Problem To Solve: Inserting in the Middle
+With the following implementation, do your best to add code for a new node to be inserted in the middle of the linked list. Remember, when inserting in the middle of the list, it needs to know what node it will be inserting after. Here is the code:
+
+```python
+def insert_after(self, value, new_value):
+    """
+    This function inserts a new node after the node that has value (parameter).
+    """
+    current = self.head
+    while current is not None:
+        if current.data == value:
+            if current == self.tail:
+                new_node = LinkedList.Node(new_value)
+                # Add code when the node to insert after is the tail
+            
+            # If the node with value is not the tail, continue here
+            else:
+                new_node = LinkedList.Node(new_value)
+                # Add code here
+
+            return  # Exit the function after successful insertion
+        current = current.next  # Continue the search until the node data matches the value
+```
+
 
 
