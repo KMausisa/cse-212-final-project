@@ -17,7 +17,7 @@ A node can have **ancestors** or **descendants**. For instance, an ancestor of a
 ## Binary Search Trees
 ![Image of Binary Search Tree](images/binary-search-tree-illustration.jpg)
 
-A Binary Search Tree follows a process to organize nodes. Data is placed into the tree by comparing the data with the value in the parent node. If the data being added is less than the parent node, then it is placed in the left subtree. If the data being added is greater than the parent node, then it is placed in the right subtree. 
+A **Binary Search Tree** (BST) follows a process to organize nodes. Data is placed into the tree by comparing the data with the value in the parent node. If the data being added is less than the parent node, then it is placed in the left subtree. If the data being added is greater than the parent node, then it is placed in the right subtree. 
 
 In the example above, the process of inserting 3 is as follows:
 1. Start at the root and compare the values. Since 3 is smaller than 5, 3 will be placed in the left subtree.
@@ -25,4 +25,13 @@ In the example above, the process of inserting 3 is as follows:
 3. Lastly, compare 3 to the following node, 4. 4 is greater than 3; therefore, 3 will be placed to the left. Since 4 does not have any children, the seach stops and 3 will be added to the list.
 
 **Activity**: Find the correct spot to put a node with the value of **8**.
+
+## Balanced Binary Search Trees
+![Image of Balanced Binary Search Tree](images/balanced-tree-illustration.png)
+
+A **Balanced Binary Search Tree** (Balanced BST) is a BST where the *height* between any two subtrees is not dramatically different. The **height** of a tree is the longest downward path from its root to any reachable leaf. For instance, the image above illustrates an **unbalanced** BST on the left, while the **balanced** BST is on the right. For the unbalanced BST, the *height*, or the longest path, from the root node to the furthest leaf is 5. On the other hand, the balanced BST has a height of 2. 
+
+The height between the root node and any of the leafs in the balanced BST is the same, being 2. On the other hand, the height between the left and right subtree of the unbalanced binary tree is completely different with the height of the right subtree being 0. In order to balance the tree, there are many different algorithms you can implement. 
+
+
 
