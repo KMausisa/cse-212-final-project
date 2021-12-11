@@ -74,7 +74,23 @@ The implementation there will be two insert functions: *insert* and *_insert*. T
 
 - insert: This function will hold a condition to check if the root of the tree is empty (or None). If it is not empty, it will call the *_insert* function and will pass the root.
 
-- _insert: This function will slowly go down the tree to look for a spot to insert the new node. It will first compare the value of the new node with the value of the current node. If the value of the new node is less than the current node, the new node belongs on the left side of the tree/subtree. If the current node has an empty *left* space available, insert the new node. If that space is not available, we need to keep looking. This is when we recursively call *_insert*. This process is identical for nodes with a value higher than the current node. 
+- _insert: This function will slowly go down the tree to look for a spot to insert the new node. It will first compare the value of the new node with the value of the current node. If the value of the new node is less than the current node, the new node belongs on the left side of the tree/subtree. If the current node has an empty *left* space available, insert the new node. If that space is not available, we need to keep looking. This is when we recursively call *_insert*. This process is identical for nodes with a value higher than the current node.
+
+```python
+def insert(self, data):
+    """
+    This insert will be called by the user. 
+    This initiates the insertion process of 
+    'data' into the BST. If the BST is empty, 
+    then set the root equal to the new node. 
+    Otherwise, use _insert to recursively 
+    find the location to insert.
+    """
+    if self.root is None:
+        self.root = BST.Node(data)
+    else:
+        self._insert(data, self.root)
+```
 
 
 
