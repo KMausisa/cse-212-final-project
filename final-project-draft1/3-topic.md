@@ -90,6 +90,41 @@ def insert(self, data):
         self.root = BST.Node(data)
     else:
         self._insert(data, self.root)
+
+def _insert(self, data, node):
+    """
+    This function will look for a place to insert 
+    a node with 'data' inside of it.
+    
+    Parameters:
+        self (BST): An instance of BST.
+        data: The data that will be inserted in the tree.
+        node: The current subtree that is being searched.
+    """
+    # If the data is greater than the current node's data...
+    if data < node.data:
+        # The data belongs on the left side.
+        if node.left is None:
+            # We found an empty spot.
+            # Create a new node and insert it
+            # at that spot.
+            node.left = BST.Node(data)
+        else:
+            # Otherwise, keep searching. Call _insert 
+            # recursively on the left subtree.
+            self._insert(data, node.left)
+
+    elif data >= node.data:
+        # The data belongs on the right side.
+        if node.right is None:
+            # We found an empty spot.
+            # Create a new node and insert it
+            # at that spot.
+            node.right = BST.Node(data)
+        else:
+            # Otherwise, keep searching. Call _insert
+            # recursively on the right subtree.
+            self._insert(data, node.right)
 ```
 
 
