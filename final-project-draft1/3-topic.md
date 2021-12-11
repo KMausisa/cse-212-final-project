@@ -52,6 +52,7 @@ print(f"The factorial of {num} is {factorial(num)}.")
 # The factorial of 3 is 6
 ```
 There are two important rules to follow when using recursion:
+
 - **Smaller Problem**: When calling a function recursively, we need to pass a smaller problem to the function.
 - **Base Case**: As the problem gets smaller and smaller, there needs to be a place to stop. We must define a scenario in which recursion is not required. When this condition is met, recursion will cease. 
 
@@ -64,10 +65,16 @@ Most operations include recursion with increasing complexity. We will be looking
 
 ### Inserting into a BST
 Inserting into a BST is a recursive operation:
+
 - Smaller Probem: Insert a value into the left subtree or the right subtree based on its value.
 - Base Case: If the subtree is empty, then insert the node at the empty space.
 
 The *Node* pf a tree is similar to that of a linked list, but the pointers will be renamed to the **left** and **right**.
+The implementation there will be two insert functions: *insert* and *_insert*. The former will be the function that the user will call, while the latter will be the function that will be called recursively.
+
+- insert: This function will hold a condition to check if the root of the tree is empty (or None). If it is not empty, it will call the *_insert* function and will pass the root.
+
+- _insert: This function will slowly go down the tree to look for a spot to insert the new node. It will first compare the value of the new node with the value of the current node. If the value of the new node is less than the current node, the new node belongs on the left side of the tree/subtree. If the current node has an empty *left* space available, insert the new node. If that space is not available, we need to keep looking. This is when we recursively call *_insert*. This process is identical for nodes with a value higher than the current node. 
 
 
 
