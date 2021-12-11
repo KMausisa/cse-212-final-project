@@ -31,7 +31,45 @@ In the example above, the process of inserting 3 is as follows:
 
 A **Balanced Binary Search Tree** (Balanced BST) is a BST where the *height* between any two subtrees is not dramatically different. The **height** of a tree is the longest downward path from its root to any reachable leaf. For instance, the image above illustrates an **unbalanced** BST on the left, while the **balanced** BST is on the right. For the unbalanced BST, the *height*, or the longest path, from the root node to the furthest leaf is 5. On the other hand, the balanced BST has a height of 2. 
 
-The height between the root node and any of the leafs in the balanced BST is the same, being 2. On the other hand, the height between the left and right subtree of the unbalanced binary tree is completely different with the height of the right subtree being 0. In order to balance the tree, there are many different algorithms you can implement. 
+The height between the root node and any of the leafs in the balanced BST is the same, being 2. On the other hand, the height between the left and right subtree of the unbalanced binary tree is completely different with the height of the right subtree being 0. In order to balance the tree, there are many different algorithms you can implement. Examples of algorithims include *[red-black trees](https://www.topcoder.com/thrive/articles/An%20Introduction%20to%20Binary%20Search%20and%20Red-Black%20Trees)* and *[Adelson-Velsii and Landis](https://www.tutorialspoint.com/data_structures_algorithms/avl_tree_algorithm.htm)* (AVL) trees.
+
+## Recursion
+**Recursion** is a technique where a function calls iself. For example, consider the following code:
+
+```python
+def factorial(x):
+    """
+    This is a recursive function to find 
+    the factorial of an integer.
+    """
+    if x == 1:      # Base Case 
+        return 1
+    else:           # Smaller Problem
+        return (x * factorial(x - 1))
+
+num = 3
+print(f"The factorial of {num} is {factorial(num)}.")
+# The factorial of 3 is 6
+```
+There are two important rules to follow when using recursion:
+- **Smaller Problem**: When calling a function recursively, we need to pass a smaller problem to the function.
+- **Base Case**: As the problem gets smaller and smaller, there needs to be a place to stop. We must define a scenario in which recursion is not required. When this condition is met, recursion will cease. 
+
+According to the example above, the *smaller problem* is the argument we are passing to each recursive call (x - 1). The parameter is getting smaller each call by 1. Once the parameter meets the if condition, or the *base case*, it will return 1 and the recursion will stop. 
+
+Without these two rules, a function will call itself forever or will stop with a **RecursionError**. 
+
+## BST Operations
+Most operations include recursion with increasing complexity. We will be looking at inserting and traversing through a tree.
+
+### Inserting into a BST
+Inserting into a BST is a recursive operation:
+- Smaller Probem: Insert a value into the left subtree or the right subtree based on its value.
+- Base Case: If the subtree is empty, then insert the node at the empty space.
+
+The *Node* pf a tree is similar to that of a linked list, but the pointers will be renamed to the **left** and **right**.
+
+
 
 
 
