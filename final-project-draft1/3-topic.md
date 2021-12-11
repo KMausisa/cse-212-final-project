@@ -61,7 +61,7 @@ According to the example above, the *smaller problem* is the argument we are pas
 Without these two rules, a function will call itself forever or will stop with a **RecursionError**. 
 
 ## BST Operations
-Most operations include recursion with increasing complexity. We will be looking at inserting and traversing through a tree.
+Most operations include recursion with increasing complexity. We will be looking at **inserting** and **traversing** through a tree.
 
 ### Inserting into a BST
 Inserting into a BST is a recursive operation:
@@ -127,6 +127,8 @@ def _insert(self, data, node):
             self._insert(data, node.right)
 ```
 
+## Traversing a BST
+Traversing is a process of visiting all nodes in a tree. If we want to 
 
 
 
