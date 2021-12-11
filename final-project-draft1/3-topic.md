@@ -128,7 +128,34 @@ def _insert(self, data, node):
 ```
 
 ## Traversing a BST
-Traversing is a process of visiting all nodes in a tree. If we want to 
+Traversing is a process of visiting all nodes in a tree. If we want to display all the data in the tree, we *traverse* through the list. Similar to insertion, traversing is a recursive process:
+- Smaller Problem: Traverse the left subtree of a node, use the current node, then traverse the right subtree. 
+- Base Case: If the subtree is empty, then don't recursively traverse or use anything.
+
+```python
+def __iter__(self):
+    """
+    Perform a forward traversal starting from the root of the BST. 
+    """
+    yield from self._traverse_forward(self.root)    # Start at the root
+
+def _traverse_forward(self, node):
+    """
+    Does an in-order traversal through the BST. If the node we are given exists, then keep traversing on the left side. Then, provide the data in the current node, and finally we will traverse on the right side. 
+    """
+    if node is not None:
+        yield from self._traverse_forward(node.left)
+        yield node.data
+        yield from self._traverse_forward(node.right)
+```
+
+### Things to note
+The **__iter__** function is a special function. The double underscores in Python means that this function is part of the Python framework. If code such as **for item in collection**, the __iter__ function will be called. This is also called a *generator function*. 
+
+"The **yield** statement suspends function's execution and sends a value back to the caller, but retains enough state to enable the function to resume where it is left off" ([source](https://www.geeksforgeeks.org/use-yield-keyword-instead-return-keyword-python/)). 
+
+If we want to use the yield operation to another function, the command is modified to be **yield from**. 
+
 
 
 
