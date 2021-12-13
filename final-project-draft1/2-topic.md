@@ -186,7 +186,28 @@ def insert_after(self, value, new_value):
 
             return  # Exit the function after successful insertion
         current = current.next  # Continue the search until the node data matches the value
+
+# Create a linked list and insert values
+ll = LinkedList()
+ll.insert_tail(1)
+ll.insert_head(2)
+ll.insert_head(3)
+ll.insert_head(4)
+ll.insert_head(5)
+ll.insert_head(6)
+ll.insert_head(7)
+
+# The linked list should look like this after these insertions:
+# [7, 6, 5, 4, 3, 2, 1]
+
+# TEST SAMPLES
+ll.insert_after(3, 3.5)     # [7, 6, 5, 4, 3, 3.5, 2, 1]
+ll.insert_after(7, 8)       # [7, 8, 6, 5, 4, 3, 3.5, 2, 1]
+ll.insert_after(0, 0.5)     # [7, 8, 6, 5, 4, 3, 3.5, 2, 1]
 ```
+You can check your code with the solution here: [Solution](python_files/linked-list.py)
+
+[Back to Welcome Page](welcome.md)
 
 
 
