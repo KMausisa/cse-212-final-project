@@ -86,5 +86,8 @@ shoppers = {
 }
 
 ```
+You can check your code with the solution here: [Solution](python_files/queue.py)
+
+[Back to Welcome Page](welcome.md)
 
 
