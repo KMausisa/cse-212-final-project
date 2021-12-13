@@ -150,11 +150,78 @@ def _traverse_forward(self, node):
 ```
 
 ### Things to note
-The **__iter__** function is a special function. The double underscores in Python means that this function is part of the Python framework. If code such as **for item in collection**, the __iter__ function will be called. This is also called a *generator function*. 
+The **__iter__** function is a special function. The double underscores in Python means that this function is part of the Python framework. If code such as **for item in collection** is implemented, the __iter__ function will be called. This is also called a *generator function*. 
 
 "The **yield** statement suspends function's execution and sends a value back to the caller, but retains enough state to enable the function to resume where it is left off" ([source](https://www.geeksforgeeks.org/use-yield-keyword-instead-return-keyword-python/)). 
 
-If we want to use the yield operation to another function, the command is modified to be **yield from**. 
+If we want to use the yield operation on another function, the command is modified to be **yield from**. 
+
+## Evaluating Performance
+We will be looking at the performance of the two operations above.
+
+The process of *inserting* a new value into a BST involves comparing the value of the current node with the new value, and recursively calling the function with a progressively smaller subtree until an empty spot is found. Therefore, a BST is getting cut in half for every recursive call which makes the search smaller each time. The performance of inserting is evaluated as **O(log n)**.
+
+However, *traversing* through a BST is not as efficient as inserting. Depending on the size of the BST, the operation's performance is evaluated as **O(n)**.
+
+## Problem To Solve: Finding the Value
+This problem will involve searching through the BST to see if it *contains* a value. If the value exists in the BST, the function will return **True**. Otherwise, it will return **False**.
+
+With the following implementation, do your best to add code which will meet the requirements above. **Hint**: Determining if a value exists in the tree involves recursively searching its subtrees to find the value.
+
+```python
+def __contains__(value):
+    """
+    This function will be called by the user which initiates
+    a search to find a value in the BST. The value that will
+    be passed is the value that the user is trying to find.
+    If the BST is empty, return False. Otherwise, call the 
+    _contains function and start at the root. This function
+    supports the ability to use the 'in' keyword:
+
+    if 5 in my_bst:
+        ("5 is in the bst")
+    """
+    # Write Conditions HERE
+    if:
+        return False
+    else:
+        pass
+
+def _contains(value, node):
+    """
+    This recursive function will be called until the value is
+    found. If the function does not find the function, it will
+    return False. The node parameter represents the subtree 
+    that will be searched. If the value is found in the BST,
+    recursion should stop (Hint: Base Case). For every recursive
+    call, the subtree should get smaller (Hint: Smaller Problem).
+    """
+    if node < node.data:
+        # WRITE CODE HERE
+        pass
+    
+    elif node > node.data:
+        # WRITE CODE HERE
+        pass
+
+# Inserting values into the tree
+tree = BST()
+tree.insert(5)
+tree.insert(3)
+tree.insert(7) 
+tree.insert(4)
+tree.insert(10)
+tree.insert(1)
+tree.insert(6)
+
+# Testing contain function
+print(3 in tree) # True
+print(2 in tree) # False
+print(7 in tree) # True
+```
+You can check your code with the solution here: [Solution](python_files/tree.py)
+
+[Back to Welcome Page](welcome.md)
 
 
 
