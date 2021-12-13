@@ -15,9 +15,9 @@ To better understand, here is a simple illustration:
 ## Analyzing Performance
 Using Big O Notation, a queue's operations have solid performance. 
 
-For instance, an enqueue does not require a shift of items in the queue since the new item will be added to the back. Therefore, the performance would be O(1). 
+For instance, an enqueue does not require a shift of items in the queue since the new item will be added to the back. Therefore, **the performance would be O(1)**. 
 
-On the other hand, a dequeue requires to shift the items to the left since the first item will be removed. The front will be the following item before the previous item was removed. Therefore, the performance would depend on how many items are in queue, in other words O(n).
+On the other hand, a dequeue requires to shift the items to the left since the first item will be removed. The front will be the following item before the previous item was removed. Therefore, the performance would depend on how many items are in queue, in other words **O(n)**.
 
 ## Real-world Application
 To better understand, imagine a line at a grocery store. The person in the front will be the first person to pay for their items and leave the line. When he leaves the line, the person behind will become the front. 
